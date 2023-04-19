@@ -7,19 +7,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json to /app
 COPY package*.json ./
 
+# Copy the production build
+COPY /build ./
+
 # Install dependencies
 RUN npm install
 
-# Build the app
-RUN npm run build
-
+# Install serve globally to serve the service
 RUN npm install -g serve
 
-# Declares a volume
-VOLUME /app/src/projects/
-
 # Expose port 3000 for the container
-EXPOSE 3000
+EXPOSE 5000
 
 # Serve the static files
-CMD [ "serve", "-s", ".", "-l", "3000" ]
+CMD [ "serve", "-s", ".", "-l", "5000" ]
