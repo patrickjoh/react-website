@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "This website",
+    "category": "Frontend - Web Development",
+    "tools": "React.js",
+    "link": "",
+    "disclaimer": "Website is still under development"
+  },
+  {
+    "id": 2,
+    "title": "Project for (NTNU - PROG2053)",
+    "category": "Frontend - Web Development",
+    "tools": "HTML, CSS, Javascript",
+    "link": "/projects/prog2053",
+    "disclaimer": "The website is written in Norwegian"
+  },
+  {
+    "id": 3,
+    "title": "Assignment for (NTNU - PROG2005)",
+    "category": "Backend - Web Development",
+    "tools": "Golang",
+    "link": "https://github.com/patrickjoh/university-search"
+  }
+]

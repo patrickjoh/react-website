@@ -1,0 +1,430 @@
+/* Standard styling */
+html body {
+    height: 100%;
+    margin: 0;
+}
+
+a {
+    font-size: 1em;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    list-style-position: inside;
+    padding-left: 0;
+}
+/* Standard styling */
+/* Implementation of the task I.3.a and I.3.b */
+body {
+    /*  Setup of body-Grid ref: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas */
+    display: grid;
+    grid-template-areas: 
+        "head head head"
+        "main main main"
+        "foot foot foot";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 5fr 1fr;
+    /*  Setup of body-Grid */
+    min-height: 100vh;
+    background: lightgrey;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 20px;
+}
+
+/* Main Grid */
+body > header {
+    grid-area: head;
+}
+
+body > main {
+    grid-area: main;
+    grid-column: 2 / 3;
+}
+
+body > footer {
+    grid-area: foot;
+
+}
+/* Main Grid */
+
+/* Start of header */
+/* Start of navigation-bar */
+.topp {
+    background-color: rgb(40, 53, 59);
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.calendar {
+    position: relative;
+}
+
+.calAmount {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 1.5em;
+    background-color: rgb(184, 177, 81);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+/* Logo */
+.calLogo {
+    width: 5em;
+    padding: 5% 3% 3% 3%;
+    position: relative;
+    display: inline-block;
+} 
+
+/* The bookmarks-list */
+/* ref: https://uxplanet.org/how-to-create-a-shopping-cart-ui-using-html-css-e5db3cd55aa0 */
+.bookmarks {
+    display: none;
+    position: absolute;
+    width: 30rem;
+    height: auto;
+    background-color: rgb(250, 250, 250);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgb(40, 53, 59);
+
+}
+
+/* Make .bookmarks visble when hovering over .calLogo */
+.calendar:hover .bookmarks {
+    display: block;
+}
+
+.bookmark-header {
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookmark-header h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.bookmark-header h3 {
+    font-size: 0.9em;
+    font-family: 'Open Sans', sans-serif;
+    color: #2F3841;
+}
+
+.remove-all {
+    font-size: 0.7em;
+    font-family: 'Open Sans', sans-serif;
+    color: #E44C4C;
+    cursor: pointer;
+    border-bottom: 1px solid #E44C4C;
+}
+
+.bookmarkListItem {
+    margin: auto;
+    width: 85%;
+    height: 3.5em;
+    display: grid;
+    grid-template-areas: 
+        "name when remove"
+        "name where remove";
+    grid-template-columns: 1fr 1fr 0.5fr;
+    color: lightgray;
+    background-color: rgb(40, 53, 59);
+    padding: 3% 3% 3% 3%;
+    border-radius: 20px;
+}
+
+.bookmarkList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bookmarkList li {
+    padding-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+}
+
+.bookmarkName {
+    grid-area: name;
+    font-weight: bold;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+}
+
+.bookmarkWhen {
+    grid-area: when;
+}
+
+.bookmarkWhere {
+    grid-area: where;
+}
+
+
+.bookmarkInfoType {
+    font-weight: bold;
+    color: rgb(254, 97, 82);
+}
+
+.remove_Bookmark {
+    grid-area: remove;
+    justify-self: end;
+    align-self: center;
+    cursor: pointer;
+    color: #E44C4C;
+    height: 1.5em;
+}
+
+
+/* Navigation */
+/* Styling for list of navigation links*/
+.navbar li{
+    display: inline-block;
+    margin: 1em;
+    color: rgb(254, 97, 82);
+    text-decoration: none;
+    font-size: 1em;
+    transition: transform .5s ease;
+}
+
+/* Styling for hovering over navigation links*/
+/* ref: https://stackoverflow.com/questions/43768354/how-do-i-make-a-button-appear-bigger-while-hovering-over-it-with-the-cursor-usin */
+/* Implementation of the task I.6 */
+.navbar li:hover {
+    color: lightgrey;
+    transform: scale(1.25);
+}
+/* End of navigation */
+/* End of navigation-bar */
+
+/* Start of welcome text */
+#velkommen {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+#velkommen article {
+    padding: 2% 15% 3% 15%;
+}
+
+#velkommen article h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4em;
+    padding-top: 3%;
+}
+/* End of welcome text */
+/* End of header */
+
+/* Start of main */
+/* Header for events */
+#events h1 {
+    font-size: 2.5em;
+    font-family: 'Bebas Neue', cursive;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+/* Header for events */
+
+/* Styling for the list of events */
+.eventList li {
+    padding-bottom: 1%;
+}
+/* Styling for the list of events */
+
+/* Styling for the event cards */
+.eventListItem {
+    display: grid;
+    grid-template-areas: 
+        "title info img"
+        "button button buton";
+    grid-template-columns: 0.8fr 2fr auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 1em;
+    color: lightgray;
+    background-color: rgb(40, 53, 59);
+    padding: 3% 3% 3% 3%;
+    border-radius: 20px;
+}
+/* Styling for the event cards */
+
+/* Styling for the event title */
+.eventListItemName {
+    grid-area: title;
+    font-weight: bold;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5em;
+}
+/* Styling for the event title */
+
+/* Styling for the event info */
+/* Implementation of the task I.3.b */
+.eventListInfo {
+    grid-area: info;
+    float: left;
+}
+/* Styling for the event info */
+
+/* Styling for the event info-type */
+.eventListInfoType {
+    font-weight: bold;
+    color: rgb(254, 97, 82);
+}
+/* Styling for the event info-type */
+
+/* Styling for event-image */
+.eventListImg img {
+    grid-area: img;
+    width: 10rem;
+    border-radius: 5%;
+    float: right;
+}
+
+.eventListButton {
+    grid-area: button;
+}
+
+.eventListButton img {
+    height: 1.5em;
+    cursor: pointer;
+}
+/* Styling for event-image */
+/* End of main */
+
+/* Start of footer */
+.footer {
+    padding-top: 5%; 
+    width: 100%;
+    height: 500px;
+}
+
+/* Start of styling for jump-to-top button */
+#tilTopp {
+    text-align: center;
+}
+
+#tilTopp a img {
+    width: 3em
+}
+/* End of styling for jump-to-top button */
+
+/* Start of styling for footer-content ref: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */
+/* Implementation of the task I.3.b */
+.footer-info {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    color:rgb(254, 97, 82);
+    background-color: rgb(40, 53, 59);
+}
+
+/* Styling for first column in footer */
+.footer-col1 {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-self: center;
+    text-align: center;
+}
+
+/* Start of styling for second column in footer */
+.footer-col2 {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+
+.footer-col2 iframe {
+    height: 75%;
+    border-radius: 10px;
+}
+/* End of styling for second column in footer */
+/* End of styling for footer-content */
+/* End of footer */
+
+/* Start of media queries ref: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries */
+/* and lecture_w38 pages 106-112 */
+/* Implementation of the task I.5 */
+@media (max-width: 800px){   
+    /* Start of styling for header */ 
+    .topp li{
+        font-size: 0.7em;
+    }
+
+    #velkommen article{
+        font-size: 0.7em;
+    }
+    /* End of styling for header */
+
+    /* Start of styling for main */
+    #events{
+        font-size: 0.7em;
+    }
+
+    /* Start of styling for event cards */
+    .eventListItem{
+        grid-template-areas: 
+        "title info";
+        grid-template-columns: 0.5fr 2fr;
+    }
+
+    .eventListItem img {
+        display: none;
+    }
+
+    .eventListInfoAll, .eventListInfoType {
+        font-size: 0.8em;
+    }
+    /* End of styling for event cards */
+    /* End of styling for main */
+
+    /* Start of styling for footer */
+    .footer-info{
+        font-size: 0.7em;
+    }
+
+    /* Styling for content in footer */ 
+    .footer-info{
+        display: grid;
+        grid-template-areas: 
+            "top top top"
+            "bottom bottom bottom";
+        grid-template-columns: 1fr 5fr 1fr;
+        text-align: center;
+    }
+
+    /* Columns are ordered differently in mobile view */ 
+    .footer-col1{
+        grid-area: top;
+        grid-column: 2 / 3;
+        width: 100%;
+    }
+
+    .footer-col2{
+        grid-area: bottom;
+        grid-column: 2 / 3;
+        width: 100%;
+        align-items: center;
+    }
+    .footer-col2 iframe {
+        width: 90%;
+        border-radius: 2%;
+    }
+    /* End of styling for footer */
+}
+/* End of media queries */

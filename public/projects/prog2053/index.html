@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This website shows students of NTNU different events that are available to them.">
+    <!-- Implementation of the task I.1 -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="script.js" async ></script>
+    <!-- External typeface: Roboto-->
+    <!-- Implementation of the task I.4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- End of External typeface Roboto-->
+    <!-- External typeface: Bebas Neue-->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <!-- End of External typeface Bebas Neue-->
+    <title>Oblig_1</title>
+</head>
+<body>
+    <!-- Start of header -->
+    <header id="topp">
+        <div class="topp">
+            <div class="calendar">
+                    <!-- Added alt text for accessibility reasons -->
+                    <img class="calLogo" src="images/calendar.svg" alt="Image of a calendar">
+                    <div id="calAmount" class="calAmount">0</div>
+                    <div class="bookmarks">
+                        <div id="bookmark-header" class="bookmark-header">
+                            <h3>Bokmerker</h3>
+                            <h5 class="remove-all">Fjern alle</h5>
+                        </div>
+                        <ul id="bookmarkList" class="bookmarkList">
+                        </ul>
+                    </div>
+            </div>
+            <!-- Primary navigation to reach the other parts of the website -->
+            <!-- Referred from lecture slides - HTML Part 2, Page 48 and https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav -->
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li href="">NY STUDENT</li>
+                        <li href="">TIPS OG TRIKS</li>
+                        <li href="">LINJEFORENINGER</li>
+                        <li href="">OM OSS</li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <!-- Start of Introduction -->
+        <!-- Introduce the user to the website, and it's purpose -->
+        <div id="velkommen">
+            <div>
+                <article>
+                    <h1>Velkommen!</h1>
+                        Velkommen til Studentpartner! På denne nettsiden får du informasjon enhver ny student trenger. Her finner du informasjon til nye studenter i Gjøvik, lure tips og triks som nye studenter kan trenge, og informasjon om linjeforeninger til det fakultetet man tilhører. Ønsker du å kontakte oss, kan du finne informasjon om dette under "OM OSS".
+                        <aside><br>Hovedmålet med siden er å se oppkommende arrangementer der man kan møte nye medstudenter. Det er konserter, besøk av organisasjoner og studentstyrte arrangementer.</aside>
+                </article>
+            </div>
+            
+            <!-- End of introduction -->
+            <!-- Contact information-->
+            <div>
+                <p><b>Kontakt oss gjerne om nye arrangementer!</b></p>
+                <p>Nå oss på: <a href="mailto:tips@studentpartner.no">tips@studentpartner.no</a></p>
+            </div>
+        </div>
+    </header>
+    <!-- End of header -->
+    <main>
+        <!-- Start of the section with the events -->
+        <div id="events">
+            <h1>Arrangementer</h1>
+            <!-- ul tag that holds the lists for all the events -->
+            <ul class="eventList" id="eventList">
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <!-- A shortcut back to the top of the page -->
+            <div id="tilTopp">
+                <a href="#topp">
+                    <!-- Implementation of the task I.7 -->
+                    <img src="images/frosk.svg" alt="Bilde av frosk som hopper til topp">
+                </a>
+            </div>
+            <div class="footer-info">
+                <div class="footer-col1">
+                    <h2>Laget av:</h2>
+                    <p>Andreas Watne, Kevin Haug og Patrick Johannessen</p>
+                </div>
+                <div class="footer-col2">
+                    <!-- A map showing the location of the university -->
+                    <h2>Besøk oss her:</h2>
+                    <!-- Referred to the lecture slides - HTML Part 2, page 34 -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1947.095541862757!2d10.680004016446942!3d60.78973178219347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4641da14f48bc6d1%3A0x15d7b34504988672!2sNTNU%20i%20Gj%C3%B8vik!5e0!3m2!1sen!2sno!4v1663849909256!5m2!1sen!2sno" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
