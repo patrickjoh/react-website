@@ -17,7 +17,7 @@ const Project1Site = () => {
     <div>
       <h2>NTNU - PROG2053</h2>
       <iframe
-        src="/projects/prog2053/index.html" 
+        src="/projects/prog2053/prog2053.html" 
         title="NTNU - PROG2053"
         style={{
           width: '100%',
