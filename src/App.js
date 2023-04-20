@@ -6,8 +6,14 @@ import './css/App.css';
 import ThemeContext from './ThemeContext';
 
 function App() {
-  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-  const [userToggledTheme, setUserToggledTheme] = useState(false);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+
+  const getInitialTheme = () => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    return mediaQuery.matches;
+  };
+
+  const [initialTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     document.body.classList.toggle('dark', darkMode);
@@ -15,42 +21,20 @@ function App() {
   }, [darkMode]);
 
   useEffect(() => {
-  if (!userToggledTheme) {
-    const savedMode = localStorage.getItem("darkMode");
+    setDarkMode(initialTheme);
 
-    if (savedMode !== null) {
-      toggleDarkMode(JSON.parse(savedMode));
-    } else {
-      // Check if the system default theme is dark
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      // Set the theme based on the system default
-      if (isDarkMode) {
-        toggleDarkMode(true);
-      } else {
-        toggleDarkMode(false);
-      }
-    }
-  }
-    
-    // Listen for changes in the system default theme
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleSystemThemeChange = () => {
-      if (!userToggledTheme) {
-        if (mediaQuery.matches) {
-          toggleDarkMode(true);
-        } else {
-          toggleDarkMode(false);
-        }
-      }
+      const isDarkMode = mediaQuery.matches;
+      setDarkMode(isDarkMode);
     };
     mediaQuery.addListener(handleSystemThemeChange);
+
     return () => mediaQuery.removeListener(handleSystemThemeChange);
-  }, [toggleDarkMode, userToggledTheme]);
+  }, [setDarkMode, initialTheme]);
 
   const handleToggleTheme = () => {
-    setUserToggledTheme(true);
-    toggleDarkMode(!darkMode);
+    setDarkMode(!darkMode);
   };
 
   return (
