@@ -1,5 +1,6 @@
-# Use an official Node.js runtime as a parent image
-FROM node:alpine
+# Building stage
+# Use an official node.js alpine runtime for building project
+FROM node:20.0-alpine AS builder
 
 # Set the working directory to /app
 WORKDIR /app
@@ -7,17 +8,24 @@ WORKDIR /app
 # Copy package.json and package-lock.json to /app
 COPY package*.json ./
 
-# Copy the production build
-COPY /build ./
-
 # Install dependencies
 RUN npm install
 
-# Install serve globally to serve the service
-RUN npm install -g serve
+# Copy the current directory contents into the container at /app
+COPY . ./
 
-# Expose port 3000 for the container
-EXPOSE 5000
+# Build the app
+RUN npm run build
 
-# Serve the static files
-CMD [ "serve", "-s", ".", "-l", "5000" ]
+# Production stage
+# Use an official Nginx alpine runtime for the final image
+FROM nginx:1.21-alpine
+
+# Copy the build output from the build stage
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Run nginx in foreground
+CMD ["nginx", "-g", "daemon off;"]
