@@ -18,6 +18,13 @@ function App() {
   useEffect(() => {
     document.body.classList.toggle('dark', darkMode);
     document.body.classList.toggle('light', !darkMode);
+
+    // Set the status bar style based on the selected theme
+    const metaTag = document.querySelector('meta[name="theme-color"]');
+    if (metaTag) {
+      metaTag.setAttribute('content', darkMode ? '#333' : '#f0f0f0');
+    }
+
   }, [darkMode]);
 
   useEffect(() => {
