@@ -18,14 +18,20 @@ COPY . ./
 RUN npm run build
 
 # Production stage
-# Use an official Nginx alpine runtime for the final image
-FROM nginx:1.21-alpine
+# Use an official node.js alpine runtime for the final image
+FROM node:20.0-alpine
 
 # Copy the build output from the build stage
-COPY --from=builder /app/build /usr/share/nginx/html
+
+WORKDIR /app
+
+# Copy /build from builder
+COPY --from=builder /app/build .
+
+RUN npm install -g serve
 
 # Expose port 80
 EXPOSE 80
 
 # Run nginx in foreground
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "serve", "-s", ".", "-l", "80" ]
