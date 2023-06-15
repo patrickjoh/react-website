@@ -33,6 +33,11 @@ body {
   color: #333;
 }
 
+body.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
 /* Dark mode styles */
 
 .dark {
@@ -49,13 +54,6 @@ body.dark {
   background-color: #333;
   color: #f0f0f0;
 }
-
-body.light {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-
 
 .dark .name {
   color: #f0f0f0;
@@ -128,6 +126,10 @@ header {
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
+}
+
+.external-link {
+  text-decoration: underline;
 }
 
 .nav-link.active {

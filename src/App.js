@@ -60,10 +60,10 @@ function App() {
                 <NavLink className="nav-link" activeClassName="active" to="/projects">Projects</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="https://github.com/patrickjoh" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a className="nav-link external-link" href="https://github.com/patrickjoh" target="_blank" rel="noopener noreferrer">GitHub</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="https://www.linkedin.com/in/patrick-johannessen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a className="nav-link external-link" href="https://www.linkedin.com/in/patrick-johannessen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               </li>
               <li>
                 <button className="toggle-theme" onClick={handleToggleTheme}>Toggle Theme</button>
