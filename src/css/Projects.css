@@ -1,7 +1,7 @@
 /* Projects.css */
 
 .projects-container {
-
+  font-size: 1.3rem;
 }
 
 h2 {
@@ -63,32 +63,35 @@ h2 {
   display: flex;
   align-items: center;
   font-weight: bold;
-  padding: 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.title-container span {
+  padding: 0 0.5em;
+  font-size: 1.2em;
 }
 
 .title-container a {
   text-decoration: none;
 }
 
+.tools-container {
+  color: #2c5ba0;
+}
+
 .dark .tools-container {
   color: #BED6FA;
 }
+
+
 
 .dark .title-container span {
   color: #f0f0f0;
 }
 
 .disclaimer {
-  color: #777;
-  font-size: 0.8rem;
-  margin-top: 0.2rem;
-  padding: 0 0.5rem;
+  color: #a4622c;
+  font-size: 0.8em;
+  margin-top: 0.2em;
+  padding: 0 0.5em;
 }
 
 .dark .disclaimer {
-  color: #ccc;
+  color: #fbd5c5;
 }
