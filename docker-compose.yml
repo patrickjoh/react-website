@@ -1,9 +1,12 @@
 version: '3'
-
 services:
   web:
     build: .
+    container_name: web-server
     image: website:latest
+    volumes:
+      - .:/app # Mount current directory to /app for live reloading
+      - /app/node_modules # Reserve this from being overwritten by the above
+    command: ["npm", "start"]
     ports:
-      - "80:80"
-
+      - "3000:3000"
