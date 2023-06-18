@@ -122,14 +122,14 @@ header {
 }
 
 .nav-link {
-  font-size: 1.4rem;
+  font-size: 2rem;
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
 }
 
 .external-link {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .nav-link.active {
@@ -178,7 +178,7 @@ header {
   }
   
   .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   
   .toggle-theme {

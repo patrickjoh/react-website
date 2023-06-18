@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import About from './About';
 import Projects from './Projects';
 import './css/App.css';
@@ -44,6 +46,7 @@ function App() {
     setDarkMode(!darkMode);
   };
 
+
   return (
     <Router>
       <div className={`App ${darkMode ? 'dark' : ''}`}>
@@ -59,11 +62,14 @@ function App() {
               <li className="nav-item">
                 <NavLink className="nav-link" activeClassName="active" to="/projects">Projects</NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link external-link" href="https://github.com/patrickjoh" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <li className="nav-item"> 
+               <a className="nav-link external-link" href="https://github.com/patrickjoh" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faGithubSquare} style={{color: darkMode ? "#ffffff" : "#7b219f" , marginRight: '0.1em' }} />GitHub</a> 
               </li>
               <li className="nav-item">
-                <a className="nav-link external-link" href="https://www.linkedin.com/in/patrick-johannessen/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a className="nav-link external-link" href="https://www.linkedin.com/in/patrick-johannessen/" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faLinkedin} style={{ color: darkMode ? "#ffffff" : '#0056d6', marginRight: '0.1em' }} />LinkedIn
+                </a>
               </li>
               <li>
                 <button className="toggle-theme" onClick={handleToggleTheme}>Toggle Theme</button>
