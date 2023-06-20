@@ -1,6 +1,6 @@
-# Building stage
 # Use an official node.js alpine runtime for building project
-FROM node:16.8 
+# Stage 1 - the build process
+FROM node:20.0 AS builder
 
 # Set the working directory to /app
 WORKDIR /app
@@ -9,13 +9,28 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --silent
 
 # Copy the current directory contents into the container at /app
 COPY . ./
 
-# Expose port 3000 to the outside world
-EXPOSE 3000
+# Build the app
+RUN npm run build
 
-# Run the app when the container launches
-CMD ["npm", "start"]
+# Stage 2 - the production environment
+FROM node:20.0-alpine
+
+# Set the working directory to /app
+WORKDIR /app/
+
+# Install serve
+RUN npm install -g serve
+
+# Copy the build output from the build environment
+COPY --from=builder /app/build /app/build
+
+# Expose port 3000 to the outside world
+EXPOSE 80
+
+# Serve the static files from the build folder
+CMD ["serve", "-s", "build", "-l", "80"]
