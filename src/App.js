@@ -64,11 +64,11 @@ function App() {
               </li>
               <li className="nav-item"> 
                <a className="nav-link external-link" href="https://github.com/patrickjoh" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faGithubSquare} style={{color: darkMode ? "#ffffff" : "#7b219f" , marginRight: '0.1em' }} />GitHub</a> 
+                <FontAwesomeIcon icon={faGithubSquare} className="navbar-github" style={{color: darkMode ? "#ffffff" : "#7b219f" }} />GitHub</a> 
               </li>
               <li className="nav-item">
                 <a className="nav-link external-link" href="https://www.linkedin.com/in/patrick-johannessen/" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faLinkedin} style={{ color: darkMode ? "#ffffff" : '#0056d6', marginRight: '0.1em' }} />LinkedIn
+                  <FontAwesomeIcon icon={faLinkedin} className="navbar-linkedin" style={{ color: darkMode ? "#ffffff" : '#0056d6' }} />LinkedIn
                 </a>
               </li>
               <li>

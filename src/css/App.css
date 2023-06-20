@@ -128,13 +128,23 @@ header {
   transition: color 0.3s ease;
 }
 
+.nav-link.active {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
 .external-link {
   text-decoration: none;
 }
 
-.nav-link.active {
-  font-size: 2.5em;
-  font-weight: bold;
+.navbar-github {
+  margin-right: 0.1em;
+  transition: color 0.3s ease;
+}
+
+.navbar-linkedin {
+  margin-right: 0.1em;
+  transition: color 0.3s ease;
 }
 
 .toggle-theme {
